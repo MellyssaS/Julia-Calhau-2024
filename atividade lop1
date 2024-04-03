@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main() {
+  char nome[252]; 
+  int idade;
+  
+  printf ("digite o nome da pessoa");
+  scanf ("%s", nome );
+  
+  printf (" digite a idade da pessoa");
+  scanf ("%d", &idade);
+  
+  if(idade>=18){
+  printf("adulto");
+  }else{
+    printf("criança");
+        
+    } 
+    return 0;
+}
