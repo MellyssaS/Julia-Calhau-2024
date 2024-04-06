@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main()
+{
+    char nome [252]; 
+    float ganhos;
+    float gastos; 
+    float saldo;
+    
+    printf("Digite o nome da pessoa:");
+    scanf("%s", &nome);
+    printf("Digite seus ganhos:");
+    scanf("%f", &ganhos);
+    printf("Digite seus gastos:");
+    scanf("%f", &gastos);
+    saldo = ganhos - gastos;
+    printf("Seu saldo é %.2f", saldo);
+    
+    if(saldo>=1000){
+        printf("rico");
+    }else{
+        printf("pobre");
+        
+    }
+    
+    return 0;
+}
