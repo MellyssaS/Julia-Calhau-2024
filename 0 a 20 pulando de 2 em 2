@@ -1,0 +1,8 @@
+#include<stdio.h>
+int main(){
+    int numeros;
+    
+    for(numeros = 0; numeros<=20; numeros+=2)
+    printf("%dnumeros \n", numeros);
+    return 0;
+}
