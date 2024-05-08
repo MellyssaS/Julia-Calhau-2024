@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main() {
+   
+   int a,b; 
+   int peso;
+
+    printf("Digite 1 ou 2 sendo:\n1-masculino\n 2-femininoin\n ");
+    scanf ("%d", &a);
+
+    switch (a){
+    case 1:
+    printf("Digite seu peso: ");
+    scanf ("%d", &peso);
+    b= peso - 100 * 0.9;
+    printf("Seu peso ideal é esse: %d", b);
+    break;
+
+    case 2:
+    printf("Digite seu peso: ");
+    scanf ("%d", &peso); 
+    b= peso - 100 * 0.85;
+    printf("Seu peso ideal é esse: %d", b);
+    break;
+    }
+ 
+ return 0; 
+    }
+  
