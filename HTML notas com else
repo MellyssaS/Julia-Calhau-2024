@@ -1,0 +1,96 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en"> </html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+</body>
+
+    <div class="Contanier"> 
+       <input type="text" placeholder="Nome do aluno" id="nome"/>
+       <input type="text" placeholder="Nota1" id="nota1"/>
+       <input type="text" placeholder="Nota2" id="nota2"/> 
+       <input type="text" placeholder="Nota3" id="nota3"/>
+       <br />
+       <button onclick="calcularMedia()">Calcular a media</button>
+       <p class="resultado"id="resultado"></p>
+    </div>
+        <script src="script.js"></script>
+    </body>
+    </html>
+
+CSS
+body{ 
+    background: white;
+}
+.container{ 
+    width: 51%;
+    height: 200px;
+    padding: 5px;
+    margin: 0 auto;
+    background: rgb(221, 156, 178);
+    border-radius: 10%;
+}
+
+input{ 
+    width: 250px;
+    height: 50px;
+    border-radius: 15px;
+    border-color: rgb(194, 106, 142);
+    padding: 5px;
+    margin: 5px;
+
+}   
+
+button{ 
+        width: 100px;
+        height: 50px;
+        border-radius: 15px;
+        border-color: pink;
+        background: rgb(230, 131, 148);
+        color: white;
+         
+} 
+
+JAVA SCRIP>JS
+
+function calcularMedia() {
+   var nota1 = parseFloat(document.getElementById("nota1").value);
+   var nota2 = parseFloat(document.getElementById("nota2").value);
+   var nota3 = parseFloat(document.getElementById("nota3").value);
+   var nome  = document.getElementById("nome").value;
+   var resultado = document.querySelector("#resultado");
+   
+   var media = (nota1 + nota2 + nota3) / 3 ;
+   var situacao = "";
+
+   if (media >= 9.5) {
+      situacao = "Aluno ouro";
+   } else if (media >= 8.5) {
+      situacao = "Aluno prata";
+   } else if (media >= 7.5) {
+      situacao = "Aluno bronze";
+   } else if (media >= 5) {
+      situacao = "Aprovado";
+   } else { 
+      situacao = "Retido";
+   }
+   
+   resultado.innerHTML = `
+   <p>Nome: ${nome}</p>
+   <p>nota 1: ${nota1}</p>
+   <p>nota 2: ${nota2}</p>
+   <p>nota 3: ${nota3}</p>
+   <p>media: ${media}</p>
+   <p>situacao: ${situacao}</p>
+   `;
+
+   
+
+}
+
