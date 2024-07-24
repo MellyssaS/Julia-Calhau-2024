@@ -1,0 +1,51 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Front para testar o NodeJs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img>
+    <img src= "https://media1.tenor.com/images/efa6cb2275578aa354626ed30214a640/tenor.gif?itemid=5944591">
+
+    <form action="http://localhost:3000/interacao"> 
+        <input type="text" name="nome" placeholder="Digite seu nome"/>
+        <input type="number" name="idade" placeholder="Digite sua idade">
+        <button type="submit">Enviar</button>
+
+    </form>
+    
+</body>
+
+</html>
+
+CSS
+body{ 
+    background: black;
+}
+
+JS
+const express = require("express");
+
+const raiz = (req, res) => {
+    res.send("Back End Ativo!");
+}
+const interacao =(req, res) => {
+    let nome = req.query.nome;
+    let idade = req.query.idade;
+    res.send(`Ola ${nome}, voce tem ${idade} anos`);
+
+}
+const app = express();
+app.get("/",raiz);
+app.get("/interacao", interacao);
+
+//Teste no console
+app.listen(3000, () => {
+    console.log("Respondendo a porta 3000")
+});
