@@ -1,0 +1,71 @@
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olimpíadas</title>
+</head>
+<body background="https://w.forfun.com/fetch/4f/4f8066c1d65aaaa2b43cbe531a922ceb.jpeg">
+    <center><b><i><Font size= 70>Medalhas Olimpicas!</font></i></b></center>
+
+    <center><font size= 50><sub>Selecione o pais que deseja somar as medalhas</sub></font></center>
+
+    <center><button><a href="home.html"><font face="Arial Rounded MT" color="black"><b>Brasil</b></font></button></center>
+        <br/>
+    <center><button><a href="home.html"><font face="Arial Rounded MT" color="black"><b>Estados Unidos</b></font></button></center>
+        <br/>
+    <center><button><a href="home.html"><font face="Arial Rounded MT" color="black"><b>China</b></font></button></center>
+        <br/>
+    <center><button><a href="home.html"><font face="Arial Rounded MT" color="black"><b>Australia</b></font></button></center>
+        <br/>
+    <center><button><a href="home.html"><font face="Arial Rounded MT" color="black"><b>França</b></font></button></center>
+                                               
+
+</body>
+</html>
+
+home.html
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medalhas</title>
+    <link rel="styleheet" href="style.css">
+
+  </head>
+  <body background="https://img.freepik.com/vetores-gratis/medalhas-2_78370-527.jpg">
+        <center><input type="text" placeholder="Medalhas de Ouro" id="medalhasdeouro"></center>
+        <br/>
+        <center><input type="text" placeholder="Medalhas de Prata" id="medalhasdeprata"></center>
+        <br/>
+        <center><input type="text" placeholder="Medalhas de Bronze" id="medalhasdebronze"></center>
+        <br/>
+        <center><button onclick="somar()">Processar Quantidades de Medalhas:</button></center>
+          <p class="resultado"id="resultado"></p>
+    </div>
+        <script src="script.js"> </script>
+  </body>
+  </html>
+
+
+JS
+
+function somar() {
+    var medalhasdeouro = parseFloat(document.getElementById("medalhasdeouro").value);
+    var medalhasdeprata = parseFloat(document.getElementById("medalhasdeprata").value);
+    var medalhasdebronze = parseFloat(document.getElementById("medalhasdebronze").value);
+    var result = document.querySelector("#resultado");
+    var somadasmedalhas = medalhasdebronze + medalhasdeprata + medalhasdeouro;
+    document.getElementById('resultado').innerHTML = 'resultado' + resultado;
+  
+      result.innerHTML = `
+      <p>Medalhas de Ouro: ${medalhasdeouro}</p>
+      <p>Medalhas de Prata: ${medalhasdeprata}</p>
+      <p>Medalhas de Bronze: ${medalhasdebronze}</p>
+      <p>Quantidade total de medalhas: ${somadasmedalhas}.</p>
+      `;
+  }
